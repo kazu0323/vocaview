@@ -1,0 +1,47 @@
+.photo_top{
+  height: 380px;
+  background-color: blue;
+}
+.c-heading-1 {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+.p-top-content__trends{
+  display: flex;
+  justify-content: center;
+  margin: 10px 10px 0 10px;
+}
+.c-content-item{
+  width: 150px;
+  height: 200px;
+  background-color: red;
+  margin: 0 10px;
+}
+.c-more-read{
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.c-more-read-item{
+  font-size: 20px;
+  height: 40px;
+  width: 100px;
+  background-color: whitesmoke;
+}
+.p-top-content__review{
+  height: 1370px;
+  width: 670px;
+  margin: 0 auto;
+}
+.c-heading-2{
+  width: 670px;
+  height: 35px;
+}
+.r-content-item{
+  background-color: turquoise;
+  height: 133px;
+  width: 670px;
+  margin: 0 0 20px;
+}
