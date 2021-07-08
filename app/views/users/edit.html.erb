@@ -1,0 +1,25 @@
+<%= render "shared/header" %>
+
+<div class="edit-page">
+  <div class="edit-content">
+    <div class="edit_page-top">
+      <div class="user_icon"></div>
+      <div class="user_nickname">
+        ユーザー名 / <%= @user.nickname %>
+      </div>
+      <div class="user_email">
+        email / <%= @user.email %>
+      </div>
+    </div>
+    <div class="edit_page-under">
+      <%= form_with model: @user, local: true, class: "edit-form"  do |f| %>
+        <div class="input_name-form">
+          <%= f.text_field :nickname, class: "input-name" %>
+        </div>
+        <div class="submit-form">
+          <%= f.submit "変更する", class: "form-sub" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

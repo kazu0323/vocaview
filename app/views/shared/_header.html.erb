@@ -3,7 +3,7 @@
   <div class = "high_header">
   <% if user_signed_in? %>
    <ul class="login_list">
-     <li><%= link_to current_user.email, user_path(current_user.id), class: "login_item"  %></li>
+     <li><%= link_to current_user.nickname, user_path(current_user.id), class: "login_item"  %></li>
      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "login_item"  %></li>
    </ul>
   <% else %>
