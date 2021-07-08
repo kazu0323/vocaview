@@ -1,0 +1,18 @@
+<%= render "shared/header" %>
+
+<div class="log_in-content">
+  <div class="log_in-top">
+    <h3 class="log_in-title">ログイン</h3>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "log_in-form" }) do |f| %>
+      <div class="log_in-form-item">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "input-email", placeholder:'email'  %>
+      </div>
+      <div class="log_in-form-item">
+        <%= f.password_field :password, autocomplete: "current-password", :class => "input-password", placeholder:'password' %>
+      </div>
+      <div class="log_in-form-item">
+        <input type="submit" value="ログイン" class="input-submit" id="input-submit" name="input-submit">
+      </div>
+    <% end %>
+  </div>
+</div>
