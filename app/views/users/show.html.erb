@@ -7,7 +7,7 @@
     <%= @email %>
     </div>
     <div class="edit-user">
-      <%= link_to "プロフィール編集", "#", class:"edit-page" %>
+      <%= link_to "プロフィール編集", edit_user_path, class:"edit-page" %>
     </div>
   </div>
   <div class="mypage-under">
@@ -23,7 +23,7 @@
           <div class="rigth-top">
             <div class="review-usericon"></div>
             <div class="review-username">
-            <%= review.user.email%>
+            <%= review.user.nickname %>
             </div>
             <div class="review-star">★★★★★</div>
           </div>
