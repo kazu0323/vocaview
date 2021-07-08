@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
   def show
-    user = User.find(params[:id])
-    @reviews = user.reviews
-    @email = user.email
+    @user = User.find(params[:id])
+    @reviews = @user.reviews
+    @email = @user.email
   end
 
   def new
@@ -24,6 +24,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:nickname)
+    params.require(:user).permit(:nickname, :image_name)
   end
 end

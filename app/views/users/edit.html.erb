@@ -3,7 +3,13 @@
 <div class="edit-page">
   <div class="edit-content">
     <div class="edit_page-top">
-      <div class="user_icon"></div>
+      <div class="user_icon">
+        <% if @user.image_name.attached? %>
+          <%= image_tag @user.image_name.variant(resize: '80x80'), class: 'icon-image' %>
+        <% else %>
+          <%= image_tag ("default_user.jpg").variant(resize: '50x50'),class:"avatar" %>
+        <% end %>
+      </div>
       <div class="user_nickname">
         ユーザー名 / <%= @user.nickname %>
       </div>
@@ -15,6 +21,10 @@
       <%= form_with model: @user, local: true, class: "edit-form"  do |f| %>
         <div class="input_name-form">
           <%= f.text_field :nickname, class: "input-name" %>
+        </div>
+        <div class="image-form">
+          <%= f.label :プロフィール画像 %><br>
+          <%= f.file_field :image_name%>
         </div>
         <div class="submit-form">
           <%= f.submit "変更する", class: "form-sub" %>
