@@ -1,0 +1,27 @@
+
+<%= render "shared/header" %>
+
+<div class = "content-top">
+  <div class = "form-area">
+    <%= form_with model: @review, local: true, class: "review-form"  do |f| %>
+      <div class="content-title">
+        (曲名)へのレビュー
+      </div>
+      <div class = "input-area">
+        <div class = "star-area">
+          <div class = "star-title">評価</div>
+          <div class = "star-item">☆☆☆☆☆</div>
+        </div>
+        <div class="review-title">
+          <%= f.text_field :review_title, class: "input-title" %>
+        </div>
+        <div class="review-area">
+          <%= f.text_area :review_text, class: "input-review", size: "40x10" %>
+        </div>
+        <div class="submit-form">
+          <%= f.submit "投稿する", class: "form-sub" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

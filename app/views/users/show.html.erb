@@ -1,0 +1,40 @@
+<%= render "shared/header" %>
+
+<div class="mypage-content">
+  <div class="mypage-top">
+    <div class="user_icon"></div>
+    <div class="user_email">
+    <%= @email %>
+    </div>
+    <div class="edit-user">
+      <%= link_to "プロフィール編集", "#", class:"edit-page" %>
+    </div>
+  </div>
+  <div class="mypage-under">
+    <% @reviews.each do |review| %>
+    <div class="r-content-item">
+      <div class="r-content-item-top">
+        <div class="content-song">
+          <div class="review-song"></div>
+        </div>
+      </div>
+      <div class="r-content-item-under">
+        <div class="review-right">
+          <div class="rigth-top">
+            <div class="review-usericon"></div>
+            <div class="review-username">
+            <%= review.user.email%>
+            </div>
+            <div class="review-star">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-content">
+          <div class="review-text">
+          <%= review.review_text %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
