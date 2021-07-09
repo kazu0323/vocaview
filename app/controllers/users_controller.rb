@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [ :edit ]
   before_action :set_user, only: [:edit, :show, :update]
   before_action :move_to_edit, only: [:edit, :update]
 
