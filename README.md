@@ -29,13 +29,14 @@ has_one :composer
 
 | Column        | Type   | Options     |
 | --------      | ------ | ----------- |
-| text          | text | null: false |
+| review_text          | text | null: false |
+| review_title          | integer | null: false |
 | user          | references | null: false,foreign_key: true |
 | song          | references | null: false,foreign_key: true |
 
 ### Association
 belongs_to :song
-belongs_to :review
+belongs_to :user
 
 ## Composers
 

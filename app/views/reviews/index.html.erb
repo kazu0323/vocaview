@@ -30,22 +30,43 @@
  </div>
 </div>
 <div>
+
+<h2 class="c-heading-2">
+  新着レビュー
+</h2>
 <div class="p-top-content__review">
-  <h2 class="c-heading-2">
-    新着レビュー
-  </h2>
-  <div class="r-content-item">
-  </div>
-  <div class="r-content-item">
-  </div>
-  <div class="r-content-item">
-  </div>
-  <div class="r-content-item">
-  </div>
-  <div class="r-content-item">
-  </div>
-  <div class="r-content-item">
-  </div>
-  <div class="r-content-item">
-  </div>
+  <% @reviews.each do |review| %>
+    <div class="r-content-item">
+      <div class="r-content-item-top">
+        <div class="content-song">
+          <div class="review-song"></div>
+        </div>
+        <div class="review-item">
+          <%= link_to "レビュー", new_review_path ,class:"review-visit" %>
+        </div>
+      </div>
+      <div class="r-content-item-under">
+        <div class="review-right">
+          <div class="rigth-top">
+            <div class="review-usericon">
+              <% if review.user.image_name.attached? %>
+                <%= image_tag review.user.image_name.variant(resize: '50x50'), class: 'icon-image' %>
+              <% else %>
+                <%= image_tag ("default_user.jpg").variant(resize: '50x50'),class:"avatar" %>
+              <% end %>
+            </div>
+            <div class="review-username">
+            <%= link_to review.user.nickname, user_path(review.user.id) %>
+            </div>
+            <div class="review-star">★★★★★</div>
+          </div>
+        </div>
+        <div class="review-content">
+          <div class="review-text">
+          <%= review.review_text %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
