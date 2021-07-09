@@ -4,9 +4,7 @@
   <div class="mypage-top">
     <div class="user_icon">
       <% if @user.image_name.attached? %>
-        <%= image_tag @user.image_name.variant(resize: '80x80'), class: 'icon-image' %>
-      <% else %>
-        <%= image_tag ("default_user.jpg").variant(resize: '50x50'),class:"avatar" %>
+        <%= image_tag @user.image_name.variant(resize: '80x80') %>
       <% end %>
     </div>
     <div class="user_email">
@@ -30,8 +28,6 @@
             <div class="review-usericon">
               <% if @user.image_name.attached? %>
                 <%= image_tag @user.image_name.variant(resize: '50x50'), class: 'icon-image' %>
-              <% else %>
-                <%= image_tag ("default_user.jpg").variant(resize: '50x50'),class:"avatar" %>
               <% end %>
             </div>
             <div class="review-username">
