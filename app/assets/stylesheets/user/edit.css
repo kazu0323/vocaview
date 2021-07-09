@@ -1,0 +1,53 @@
+.edit-content{
+  width: 70vw;
+  height: 1000px;
+  margin: 0 auto;
+}
+.edit_page-top{
+  margin-top: 50px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  border-top: solid 1px rgb(194, 194, 194);
+}
+.user_icon{
+  margin: 0 15px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+.user_nickname{
+  margin-left: 30px;
+  font-size: 20px;
+}
+.user_email{
+  margin-left: 30px;
+}
+.edit-user{
+  text-align: center;
+  margin: 0 70px 0 auto;
+  font-size: 15px;
+  height: 45px;
+  width: 300px;
+  background-color: rgb(190, 188, 188);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.edit-page{
+  height: 20px;
+}
+.edit_page-under{
+  display: flex;
+  justify-content: center;
+}
+.input-name{
+  border: solid 1px black;
+}
+.image-form{
+  margin-top: 30px;
+  text-align: center;
+}
