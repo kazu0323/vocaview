@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:edit, :show, :update]
+  before_action :move_to_edit, only: [:edit, :update]
 
   def show
-    @user = User.find(params[:id])
     @reviews = @user.reviews
     @email = @user.email
   end
@@ -10,11 +11,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if current_user.update(user_params)
       redirect_to root_path
     else
@@ -25,5 +24,15 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:nickname, :image_name)
+  end
+
+  def move_to_edit
+    unless current_user.id == @user.id
+      redirect_to root_path
+    end
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
