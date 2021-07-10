@@ -35,7 +35,19 @@
             <div class="review-username">
             <%= review.user.nickname %>
             </div>
-            <div class="review-star">★★★★★</div>
+            <div class="review-star">
+              <div id="star-rate-<%= review.id %>"></div>
+            </div>
+            <script>
+              $('#star-rate-<%= review.id %>').raty({
+                size: 50,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                half: true,
+                readOnly: true,
+                score: <%= review.rate %>,
+              });
+            </script> 
           </div>
         </div>
         <div class="review-content">
