@@ -50,13 +50,25 @@
           <div class="rigth-top">
             <div class="review-usericon">
               <% if review.user.image_name.attached? %>
-                <%= image_tag review.user.image_name.variant(resize: '50x50') %>
+                <%= image_tag review.user.image_name %>
               <% end %>
             </div>
             <div class="review-username">
             <%= link_to review.user.nickname, user_path(review.user.id) %>
             </div>
-            <div class="review-star">★★★★★</div>
+            <div class="review-star">
+              <div id="star-rate-<%= review.id %>"></div>
+            </div>
+            <script>
+              $('#star-rate-<%= review.id %>').raty({
+                size: 5,
+                starOff:  '<%= asset_path('star-off.png') %>',
+                starOn : '<%= asset_path('star-on.png') %>',
+                half: true,
+                readOnly: true,
+                score: <%= review.rate %>,
+              });
+            </script> 
           </div>
         </div>
         <div class="review-content">

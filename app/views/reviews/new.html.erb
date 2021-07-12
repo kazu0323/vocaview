@@ -8,10 +8,23 @@
         (曲名)へのレビュー
       </div>
       <div class = "input-area">
-        <div class = "star-area">
-          <div class = "star-title">評価</div>
-          <div class = "star-item">☆☆☆☆☆</div>
-        </div>
+          <div class="star-area" id="star">
+            <%= f.label :star,'評価 ', class:'col-md-3 col-form-label' %>
+            <%= f.hidden_field :star, id: :review_star %>
+          </div>
+
+          <!-- 評価javascript -->
+         <script>
+         $('#star').raty({
+           size     : 50,
+           starOff:  '<%= asset_path('star-off.png') %>',
+           starOn : '<%= asset_path('star-on.png') %>',
+       
+           scoreName: 'review[rate]',
+           half: false,
+         });
+         </script> 
+
         <div class="review-title">
           <%= f.text_field :review_title, class: "input-title" %>
         </div>
