@@ -1,6 +1,6 @@
 .photo_top{
   height: 380px;
-  background-color: blue;
+  background-color: rgb(247, 244, 244);
 }
 .c-heading-1 {
   font-size: 30px;
@@ -103,9 +103,11 @@
   width: 200px;
 }
 .review-star{
-  font-size: 30px;
   text-align: center;
   margin: 0 10px;
+}
+.star_item{
+  width: auto;
 }
 .review-content{
   width: 680px;
@@ -114,4 +116,6 @@
 .review-text{
   padding-right: 10px;
   font-size: 20px;
+}
+.rate_item{
 }
