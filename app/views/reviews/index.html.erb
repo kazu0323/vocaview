@@ -10,16 +10,9 @@
     </h2>
     <div class="p-top-content__trends">
       <div class="c-content-item">
-      </div>
-      <div class="c-content-item">
-      </div>
-      <div class="c-content-item">
-      </div>
-      <div class="c-content-item">
-      </div>
-      <div class="c-content-item">
-      </div>
-      <div class="c-content-item">
+      <% @songs.each do |song| %>
+        <%= link_to (image_tag song.song_image , class:"song_size", size:"200x150"), root_path %>
+      <% end %>
       </div>
     </div>
     <div class="c-more-read">
@@ -39,10 +32,12 @@
     <div class="r-content-item">
       <div class="r-content-item-top">
         <div class="content-song">
-          <div class="review-song"></div>
+          <div class="review-song">
+            <%= link_to (image_tag review.song.song_image , class:"song_size", size:"200x150"), song_path(review.song.id)  %>
+          </div>
         </div>
         <div class="review-item">
-          <%= link_to "レビュー", new_review_path ,class:"review-visit" %>
+          <%= link_to "レビュー", new_review_path(review.song.id) ,class:"review-visit" %>
         </div>
       </div>
       <div class="r-content-item-under">

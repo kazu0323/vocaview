@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :user
-
+  belongs_to :song
+  
   with_options presence: true do
     validates :review_text, length: { maximum: 75 }
     validates :rate,numericality: {
