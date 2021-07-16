@@ -1,0 +1,67 @@
+<%= render "shared/header" %>
+
+<div class="content-container"> <!--画面全体-->
+  <div class="content-main"><!--歌情報部分-->
+    <div class="song_show_content">
+      <h1 class="song-title">
+        <%= @song.song_name %>
+        <div class="song_review-item">
+          <%= link_to "この曲のレビューを書く", new_review_path ,class:"review-visit" %>
+        </div>
+      </h1>
+      <div class="song-img-content-top">
+        <div class="song-img-content">
+          <%= link_to (image_tag @song.song_image , class:"song_size", size:"430x300"), song_path(@song.id)  %>
+        </div>
+      </div>
+    </div>
+    <div class="mypage-under">
+      <h1 class="mypage-under_title">
+        <%= @song.song_name %><%= "に投稿されたレビュー"%>
+      </h1>
+      <% @reviews.each do |review| %>
+      <div class="r-content-item">
+        <div class="r-content-item-top">
+          <div class="content-song">
+            <div class="review-song">
+              <%= link_to (image_tag @song.song_image , class:"song_size", size:"200x150"), song_path(@song.id)  %>
+            </div>
+          </div>
+        </div>
+        <div class="r-content-item-under">
+          <div class="review-right">
+            <div class="rigth-top">
+              <div class="review-usericon">
+                <% if @user.image_name.attached? %>
+                  <%= image_tag review.user.image_name, class: 'icon-image' %>
+                <% end %>
+              </div>
+              <div class="review-username">
+              <%= review.user.nickname %>
+              </div>
+              <div class="review-star">
+                <div id="star-rate-<%= review.id %>"></div>
+              </div>
+              <script>
+                $('#star-rate-<%= review.id %>').raty({
+                  size: 50,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= review.rate %>,
+                });
+              </script> 
+            </div>
+          </div>
+          <div class="review-content">
+            <div class="review-text">
+            <%= review.review_text %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

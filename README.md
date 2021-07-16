@@ -17,9 +17,9 @@ has_many :reviews
 | Column        | Type   | Options     |
 | --------      | ------ | ----------- |
 | song_name       | string | null: false |
-| composer        | references | null: false,foreign_key: true |
-| review          | references | null: false,foreign_key: true |
-| star            | references | null: false,foreign_key: true |
+| song_image       | string | null: false |
+| song_url       | string | null: false |
+| composer       | string | null: false |
 
 ### Association
 has_many :reviews
