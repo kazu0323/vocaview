@@ -13,10 +13,9 @@
 # Features
  
 ボカロだけに限定したレビューサイトは見当たらなかったため作成しようと考えました。
+*このアプリは開発中です。
  
 # Requirement
- 
-"hoge"を動かすのに必要なライブラリなどを列挙する
  
 Rails 6.0.4
 ruby 2.6.5p114
@@ -24,5 +23,3 @@ ruby 2.6.5p114
 # Author
  
 E-mail: kazuki.tech0@gmail.com
-
-*このアプリは開発中です。
