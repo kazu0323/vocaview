@@ -6,7 +6,9 @@
  
 # DEMO
  
-https://i.gyazo.com/6d3330e51f2aa348b0a94e2309126255.png
+![](https://i.gyazo.com/6d3330e51f2aa348b0a94e2309126255.png)
+
+![](https://i.gyazo.com/14eb5ce152a349459c52da1f4129956b.png)
  
 # Features
  
