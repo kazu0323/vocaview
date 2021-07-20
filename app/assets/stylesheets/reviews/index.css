@@ -14,9 +14,22 @@
 }
 .c-content-item{
   width: 200px;
-  height: 150px;
-  background-color: red;
-  margin: 0 10px;
+  height: 180px;
+  margin: 0 15px;
+}
+.top_review_item{
+  display: flex;
+  width: 90px;
+  height: 40px;
+  background-color:rgb(255, 255, 133);
+  border-radius:20px;
+  margin: 0 auto;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.review-item-top{
+  display: block;
 }
 .c-more-read{
   height: 120px;
@@ -48,17 +61,27 @@
   margin: 15px auto;
   display: flex;
 }
+
 .content-song{
   width: 320px;
   height: 160px;
   display: flex;
   justify-content: center;
 }
-.review-song{
+.img-size_review-index-top{
   width: 200px;
-  height: 150px;
-  margin-top: 8%;
-  background-color: blue;
+  height: 111.5px;
+  object-fit: cover
+}
+.review-song{
+  width: 230px;
+  height: 180px;
+  margin-top: 40px;
+}
+.img-size_review-index{
+  width: 230px;
+  height: 125px;
+  object-fit: cover;
 }
 .review-item{
   width: 90px;
@@ -70,9 +93,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.review-visit{
-
 }
 .r-content-item-under{
   width: 780px;
@@ -120,5 +140,4 @@
 .rate_item{
 }
 .song_size{
-
 }

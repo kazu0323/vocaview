@@ -21,14 +21,26 @@
 }
 .song-img-content-top{
   display: flex;
-  justify-content: center;
 }
 .song-img-content{
-  display: flex;
-  justify-content: center;
-  width: 500px;
+  margin-left: 80px;
+  width: 470px;
   height: 300px;
-  margin-top: 20px;
+  margin-top: 40px;
+}
+.img-size_song-show{
+  width: 430px;
+  height: 240px;
+  object-fit: cover
+}
+.song-composer-content{
+  width: 300px;
+  padding-top: 40px;
+  font-size: 20px;
+}
+.song-composer-content_title{
+  font-size: 20px;
+  font-weight: bold;
 }
 .song_review-item{
   font-size: 18px;

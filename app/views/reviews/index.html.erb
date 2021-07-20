@@ -9,11 +9,14 @@
       Vocaviewで今注目の動画
     </h2>
     <div class="p-top-content__trends">
-      <div class="c-content-item">
       <% @songs.each do |song| %>
-        <%= link_to (image_tag song.song_image , class:"song_size", size:"200x150"), root_path %>
-      <% end %>
+      <div class="c-content-item">
+        <%= link_to (image_tag song.song_image , class:"img-size_review-index-top"), song_path(song.id) %>
+        <div class="top_review_item">
+          <%= link_to "レビュー", new_song_review_path(song.id) ,class:"review-visit" %>
+        </div>
       </div>
+      <% end %>
     </div>
     <div class="c-more-read">
       <a class="c-more-read-item" href="#">
@@ -33,11 +36,11 @@
       <div class="r-content-item-top">
         <div class="content-song">
           <div class="review-song">
-            <%= link_to (image_tag review.song.song_image , class:"song_size", size:"200x150"), song_path(review.song.id)  %>
+            <%= link_to (image_tag review.song.song_image , class:"img-size_review-index"), song_path(review.song.id)  %>
           </div>
         </div>
         <div class="review-item">
-          <%= link_to "レビュー", new_review_path(review.song.id) ,class:"review-visit" %>
+          <%= link_to "レビュー", new_song_review_path(review.song.id) ,class:"review-visit" %>
         </div>
       </div>
       <div class="r-content-item-under">
