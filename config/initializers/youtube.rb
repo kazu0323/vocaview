@@ -1,6 +1,6 @@
 require 'google/apis/youtube_v3'
 
-API_KEY = ENV['YOUTUBE_DATA_API_KEY']
+API_KEY = Rails.application.credentials.youtube[:GOOGLE_API_KEY]
 
 def get_youtube_service
 
