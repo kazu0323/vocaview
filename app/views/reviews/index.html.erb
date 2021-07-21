@@ -9,6 +9,9 @@
       Vocaviewで今注目の動画
     </h2>
     <div class="p-top-content__trends">
+    <% unless @song.blank? %>
+
+    <% else %>
       <% @songs.each do |song| %>
       <div class="c-content-item">
         <%= link_to (image_tag song.song_image , class:"img-size_review-index-top"), song_path(song.id) %>
@@ -17,6 +20,7 @@
         </div>
       </div>
       <% end %>
+    <% end %>
     </div>
     <div class="c-more-read">
       <a class="c-more-read-item" href="#">
@@ -31,6 +35,9 @@
   新着レビュー
 </h2>
 <div class="p-top-content__review">
+<% if @reviews.blank? %>
+
+<% else %>
   <% @reviews.each do |review| %>
     <div class="r-content-item">
       <div class="r-content-item-top">
@@ -77,4 +84,5 @@
       </div>
     </div>
   <% end %>
+<% end %>
 </div>
