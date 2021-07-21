@@ -21,7 +21,12 @@
     <div class="r-content-item">
       <div class="r-content-item-top">
         <div class="content-song">
-          <div class="review-song"></div>
+          <div class="review-song">
+            <%= link_to (image_tag review.song.song_image , class:"img-size_review-index"), song_path(review.song.id)  %>
+          </div>
+        </div>
+        <div class="review-item">
+          <%= link_to "レビュー", new_song_review_path(review.song.id) ,class:"review-visit" %>
         </div>
       </div>
       <div class="r-content-item-under">

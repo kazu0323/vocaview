@@ -6,9 +6,3 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Song .create!(
-  song_name: "DECO*27 - ヴァンパイア feat. 初音ミク",
-  song_image: "https://i.ytimg.com/vi/e1xCOsgWG0M/hqdefault.jpg",
-  song_url: "e1xCOsgWG0M",
-  song_composer: "DECO*27"
-)
