@@ -10,5 +10,5 @@ Song.create!(
   song_name: "ヴィラン / flower・てにをは (villain/ flower・teniwoha)",
   song_image: "https://i.ytimg.com/vi/p9FJXfGHtDA/hqdefault.jpg",
   song_url: "p9FJXfGHtDA",
-  song_composer: "てにをは",
+  song_composer: "てにをは"
 )
