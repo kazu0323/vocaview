@@ -9,7 +9,7 @@
       Vocaviewで今注目の動画
     </h2>
     <div class="p-top-content__trends">
-    <% unless @song.blank? %>
+    <% if @songs.blank? %>
 
     <% else %>
       <% @songs.each do |song| %>
