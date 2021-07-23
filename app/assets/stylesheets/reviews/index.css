@@ -1,6 +1,10 @@
 .photo_top{
   height: 380px;
-  background-color: rgb(247, 244, 244);
+  display: flex;
+  justify-content: center;
+}
+.p-top-content{
+  margin-top: 20px;
 }
 .c-heading-1 {
   font-size: 30px;
