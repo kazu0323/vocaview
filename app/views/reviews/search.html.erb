@@ -1,0 +1,20 @@
+
+<%= render "shared/header" %>
+
+<div class="search_song_content">
+    <h2 class="search_song_content_title">
+    <%= "検索結果"%>
+    </h2>
+  <div class="search_song_content_under">
+    <% @result.each do |f| %>
+    <div class="search_song_item">
+      <div class="search_song_song">
+        <%= link_to (image_tag f.song_image , class:"img-size_review-search-top"), song_path(f.id) %>
+      </div>
+      <div class="search_song_name">
+        <%= link_to f.song_name, song_path(f.id) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

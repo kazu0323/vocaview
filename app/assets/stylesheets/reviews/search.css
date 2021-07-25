@@ -1,0 +1,36 @@
+.search_song_content_top{
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.search_song_content_title{
+  font-size: 30px;
+  margin: 20px 0;
+  text-align: center;
+}
+.search_song_content_under{
+  width: 80vw;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: center;
+  padding-top: 40px;
+  background-color: rgb(226, 226, 226);
+}
+.search_song_item{
+  width: 24vw;
+  height: 24vh;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.img-size_review-search-top{
+  width: 300px;
+  height: 165.5px;
+  object-fit: cover
+}
+.search_song_name{
+  display: block;
+}

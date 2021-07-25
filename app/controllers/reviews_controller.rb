@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
+
   def index
     @reviews = Review.all.limit(6).order("id DESC")
     @songs = Song.all.limit(4).order("id DESC")
@@ -18,9 +19,11 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def search
+  end
+
   private
   def review_params
     params.require(:review).permit(:review_title, :review_text, :rate).merge(user_id: current_user.id, song_id: params[:song_id])
   end
-
 end
