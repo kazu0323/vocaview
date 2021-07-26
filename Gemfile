@@ -59,3 +59,4 @@ gem 'image_processing', '~> 1.2'
 gem 'dotenv-rails'
 gem 'google-api-client'
 gem 'ransack'
+gem "aws-sdk-s3", require: false
