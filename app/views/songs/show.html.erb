@@ -39,7 +39,7 @@
                 <%= image_tag review.user.image_name, class: 'icon-image' %>
               </div>
               <div class="review-username">
-              <%= review.user.nickname %>
+              <%= link_to review.user.nickname, user_path(review.user.id) %>
               </div>
               <div class="review-star">
                 <div id="star-rate-<%= review.id %>"></div>

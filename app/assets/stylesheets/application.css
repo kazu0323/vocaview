@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+ footer{
+ }
+ .footer-links__inner{
+   width: 100vw;
+   height: 500px;
+   background-color: rgb(41, 41, 41);
+   display: flex;
+   justify-content: center;
+ }
+.footer-links__block{
+  display: flex;
+}
+.footer-links__items{
+  margin: 30px 40px;
+}
+.footer-links__item{
+  display: flex;
+  flex-direction: column;
+}
+.footer-links__link{
+  margin: 10px 0;
+}
+.footer-links__item a{
+  color: white;
+}
+.footer-copyright{
+  text-align: center;
+}
