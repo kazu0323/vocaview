@@ -10,6 +10,8 @@
 
   ![](https://i.gyazo.com/6d3330e51f2aa348b0a94e2309126255.png)
 
+  ![](https://i.gyazo.com/625fab6afcac651118dbc8993b736f5b.jpg)
+
 レビュー投稿ページ
 
  ![](https://i.gyazo.com/01e3a5920d42fcac8601e269fb7e3fa1.png)
