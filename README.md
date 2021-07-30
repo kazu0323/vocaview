@@ -1,28 +1,53 @@
 # README
 
-# Vocawiew
+# 概要
  
 "Vocawiew"はボーカロイド(CEVIOも含む)を使用した楽曲についてレビューを投稿&共有できるサービスです。
- URL:https://vocaview.herokuapp.com/
+
 # DEMO
  
-![](https://i.gyazo.com/6d3330e51f2aa348b0a94e2309126255.png)
+ トップページ
 
-![](https://i.gyazo.com/14eb5ce152a349459c52da1f4129956b.png)
+  ![](https://i.gyazo.com/6d3330e51f2aa348b0a94e2309126255.png)
+
+レビュー投稿ページ
+
+ ![](https://i.gyazo.com/01e3a5920d42fcac8601e269fb7e3fa1.png)
+ 
  
 ![Videotogif](https://user-images.githubusercontent.com/80685696/126891180-6ecd5545-4b1c-42b4-b2f9-7a02c9332f5d.gif)
-# Features
- 
-ボカロ曲だけに限定したレビューサイトは見当たらなかったため作成しようと考えました。
+# 本番環境
+
+URL:https://vocaview.herokuapp.com/
+
+ ログイン情報
+
+ テスト用ユーザー
+
+  Email:test@gmail.com
+
+  Password: test1234
+
+#  制作背景
+このアプリを制作に至った経緯として、私は趣味として音楽を聴く中で好きなボカロ曲について他のユーザーに共有するサイトが欲しいと感じていました。また、ストリーミング配信されている有名曲だけでなくマイナーな曲についての共有も行いたいと感じていました。
+
+ボカロ曲だけに限定したレビューサイトは現状見当たらず制作に至りました。
+
+また、ストリーミング配信のされていない曲についても共有できるようにYoutubeサービスを利用したアプリとすることを決めました。
 
 *このアプリは開発中です。
  
 # Requirement
  
 Rails 6.0.4
+
 ruby 2.6.5p114
 
-楽曲データはYoutubeAPIを使用しています。
+YoutubeAPI
+
+AWS
+
+ S3
 
 # Author
  
