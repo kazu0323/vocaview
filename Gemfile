@@ -60,3 +60,4 @@ gem 'dotenv-rails'
 gem 'google-api-client'
 gem 'ransack'
 gem "aws-sdk-s3", require: false
+gem 'kaminari'

@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
 
   def set_search
     @q = Song.ransack(params[:q])
-    @result = @q.result(distinct: true).limit(12)
+    @result = @q.result(distinct: true).page(params[:page])
   end
 end

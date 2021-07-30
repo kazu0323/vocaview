@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
 
   def index
-    @reviews = Review.all.limit(6).order("id DESC")
+    @reviews = Review.all.limit(5).order("id DESC")
     @songs = Song.all.limit(4).order("id DESC")
   end
 
