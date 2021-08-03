@@ -24,66 +24,64 @@
     <% end %>
     </div>
     <div class="c-more-read">
-      <a class="c-more-read-item" href="#">
-        もっと見る
-      </a>
+      <%=link_to "もっと見る", songs_path, class:"c-more-read-item" %>
     </div>
  </div>
 </div>
-<div>
-
-<h2 class="c-heading-2">
-  新着レビュー
-</h2>
-<div class="p-top-content__review">
-<% if @reviews.blank? %>
-
-<% else %>
-  <% @reviews.each do |review| %>
-    <div class="r-content-item">
-      <div class="r-content-item-top">
-        <div class="content-song">
-          <div class="review-song">
-            <%= link_to (image_tag review.song.song_image , class:"img-size_review-index"), song_path(review.song.id)  %>
+<div class="content_review-index">
+  <h2 class="c-heading-2">
+    新着レビュー
+  </h2>
+  <div class="p-top-content__review">
+  <% if @reviews.blank? %>
+  
+  <% else %>
+    <% @reviews.each do |review| %>
+      <div class="r-content-item">
+        <div class="r-content-item-top">
+          <div class="content-song">
+            <div class="review-song">
+              <%= link_to (image_tag review.song.song_image , class:"img-size_review-index"), song_path(review.song.id)  %>
+            </div>
+          </div>
+          <div class="review-item">
+            <%= link_to "レビュー", new_song_review_path(review.song.id) ,class:"review-visit" %>
           </div>
         </div>
-        <div class="review-item">
-          <%= link_to "レビュー", new_song_review_path(review.song.id) ,class:"review-visit" %>
+        <div class="r-content-item-under">
+          <div class="review-right">
+            <div class="rigth-top">
+              <div class="review-usericon">
+                <% if review.user.image_name.attached? %>
+                  <%= image_tag review.user.image_name %>
+                <% end %>
+              </div>
+              <div class="review-username">
+              <%= link_to review.user.nickname, user_path(review.user.id) %>
+              </div>
+              <div class="review-star">
+                <div id="star-rate-<%= review.id %>"></div>
+              </div>
+              <script>
+                $('#star-rate-<%= review.id %>').raty({
+                  size: 5,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= review.rate %>,
+                });
+              </script> 
+            </div>
+          </div>
+          <div class="review-content">
+            <div class="review-text">
+              <%= review.review_text %>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="r-content-item-under">
-        <div class="review-right">
-          <div class="rigth-top">
-            <div class="review-usericon">
-              <% if review.user.image_name.attached? %>
-                <%= image_tag review.user.image_name %>
-              <% end %>
-            </div>
-            <div class="review-username">
-            <%= link_to review.user.nickname, user_path(review.user.id) %>
-            </div>
-            <div class="review-star">
-              <div id="star-rate-<%= review.id %>"></div>
-            </div>
-            <script>
-              $('#star-rate-<%= review.id %>').raty({
-                size: 5,
-                starOff:  '<%= asset_path('star-off.png') %>',
-                starOn : '<%= asset_path('star-on.png') %>',
-                half: true,
-                readOnly: true,
-                score: <%= review.rate %>,
-              });
-            </script> 
-          </div>
-        </div>
-        <div class="review-content">
-          <div class="review-text">
-            <%= review.review_text %>
-          </div>
-        </div>
-      </div>
-    </div>
+    <% end %>
   <% end %>
-<% end %>
+  </div>
 </div>
