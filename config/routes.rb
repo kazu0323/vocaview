@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "reviews#index"
   get 'reviews/search'
   resources :users, only: [:show, :edit, :update]
-  resources :songs, only: [:show] do
+  resources :songs, only: [:show, :index] do
     resources :reviews, only: [:index, :new, :create]
   end
 end
