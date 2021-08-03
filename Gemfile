@@ -61,3 +61,5 @@ gem 'google-api-client'
 gem 'ransack'
 gem "aws-sdk-s3", require: false
 gem 'kaminari'
+gem 'bootstrap', '~> 4.5.0'
+gem 'jquery-rails'

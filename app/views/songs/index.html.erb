@@ -3,10 +3,10 @@
 
 <div class="search_song_content">
     <h2 class="search_song_content_title">
-    <%= "検索結果"%>
+    <%= "今話題の楽曲"%>
     </h2>
   <div class="search_song_content_under">
-    <% @result.each do |f| %>
+    <% @songs.each do |f| %>
     <div class="search_song_item">
       <div class="search_song_song">
       <%= link_to (image_tag f.song_image , class:"img-size_review-search-top"), song_path(f.id) %>

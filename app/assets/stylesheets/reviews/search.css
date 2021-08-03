@@ -1,5 +1,5 @@
 .search_song_content_top{
-  width: 80vw;
+  width: 1000px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -10,8 +10,7 @@
   text-align: center;
 }
 .search_song_content_under{
-  width: 80vw;
-  height: 100vh;
+  width: 1000px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
@@ -19,12 +18,11 @@
   justify-content: center;
   padding-top: 40px;
   background-color: rgb(226, 226, 226);
+  padding-bottom: 100px;
 }
 .search_song_item{
-  width: 24vw;
-  height: 24vh;
-  margin-top: 10px;
-  margin-bottom: 30px;
+  width: 300px;
+  margin: 10px 30px;
 }
 .img-size_review-search-top{
   width: 300px;
