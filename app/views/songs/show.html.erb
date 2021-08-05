@@ -16,6 +16,12 @@
         <div class="song-composer-content">
           <div class="song-composer-content_title">作曲者</div>
           <%= @song.song_composer%>
+          <div class="play_video">
+            <%= link_to (image_tag '764.png',class:"play_img"), "https://www.youtube.com/watch?v=#{@song.song_url}" %>
+            <div class="play_video_content">
+              <%= "Youtubeで再生する" %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
