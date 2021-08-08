@@ -16,52 +16,55 @@
       </div>
     <% end %>
   </div>
-  <div class="mypage-under">
-    <% @reviews.each do |review| %>
-    <div class="r-content-item">
-      <div class="r-content-item-top">
-        <div class="content-song">
-          <div class="review-song">
-            <%= link_to (image_tag review.song.song_image , class:"img-size_review-index"), song_path(review.song.id)  %>
+  <div class="mypage-under_user_show">
+    <div class="mypage-under_content_user_show">
+      <% @reviews.each do |review| %>
+      <div class="r-content-item">
+        <div class="r-content-item-top">
+          <div class="content-song">
+            <div class="review-song">
+              <%= link_to (image_tag review.song.song_image , class:"img-size_review-index"), song_path(review.song.id)  %>
+            </div>
+          </div>
+          <div class="review-item">
+            <%= link_to "レビュー", new_song_review_path(review.song.id) ,class:"review-visit" %>
           </div>
         </div>
-        <div class="review-item">
-          <%= link_to "レビュー", new_song_review_path(review.song.id) ,class:"review-visit" %>
+        <div class="r-content-item-under">
+          <div class="review-right">
+            <div class="rigth-top">
+              <div class="review-usericon">
+                <% if @user.image_name.attached? %>
+                  <%= image_tag @user.image_name, class: 'icon-image' %>
+                <% end %>
+              </div>
+              <div class="review-username">
+              <%= review.user.nickname %>
+              </div>
+              <div class="review-star">
+                <div id="star-rate-<%= review.id %>"></div>
+              </div>
+              <script>
+                $('#star-rate-<%= review.id %>').raty({
+                  size: 50,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= review.rate %>,
+                });
+              </script> 
+            </div>
+          </div>
+          <div class="review-content">
+            <div class="review-text">
+            <%= review.review_text %>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="r-content-item-under">
-        <div class="review-right">
-          <div class="rigth-top">
-            <div class="review-usericon">
-              <% if @user.image_name.attached? %>
-                <%= image_tag @user.image_name, class: 'icon-image' %>
-              <% end %>
-            </div>
-            <div class="review-username">
-            <%= review.user.nickname %>
-            </div>
-            <div class="review-star">
-              <div id="star-rate-<%= review.id %>"></div>
-            </div>
-            <script>
-              $('#star-rate-<%= review.id %>').raty({
-                size: 50,
-                starOff:  '<%= asset_path('star-off.png') %>',
-                starOn : '<%= asset_path('star-on.png') %>',
-                half: true,
-                readOnly: true,
-                score: <%= review.rate %>,
-              });
-            </script> 
-          </div>
-        </div>
-        <div class="review-content">
-          <div class="review-text">
-          <%= review.review_text %>
-          </div>
-        </div>
-      </div>
+      <% end %>
+      <%= paginate @reviews %>
     </div>
-    <% end %>
   </div>
 </div>

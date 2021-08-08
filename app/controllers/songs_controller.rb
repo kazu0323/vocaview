@@ -5,7 +5,7 @@ class SongsController < ApplicationController
     @songs = Song.all.order("id DESC")
   end
   def show
-    @reviews = @song.reviews
+    @reviews = @song.reviews.order("id DESC").page(params[:page]).per(5)
   end
 
   private

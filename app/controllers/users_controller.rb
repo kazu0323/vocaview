@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :move_to_edit, only: [:edit, :update]
 
   def show
-    @reviews = @user.reviews.limit(5)
+    @reviews = @user.reviews.order("id DESC").page(params[:page]).per(5)
     @email = @user.email
   end
 
