@@ -34,6 +34,7 @@ input {
 .col-md-3 {
   font-size: 28px;
   margin: 0 20px;
+  font-weight: lighter;
 }
 .star-title{
   font-size: 30px;
