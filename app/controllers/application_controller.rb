@@ -12,4 +12,7 @@ class ApplicationController < ActionController::Base
     @q = Song.ransack(params[:q])
     @result = @q.result(distinct: true).page(params[:page])
   end
+  def after_sign_out_path_for(resource)
+    root_path
+   end
 end
