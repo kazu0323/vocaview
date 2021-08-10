@@ -60,6 +60,7 @@
             <div class="review-text">
             <%= review.review_text %>
             </div>
+            <%= link_to (image_tag 'delete.png', class: "delete_img"), review_path(review.id), method: :delete %>
           </div>
         </div>
       </div>
