@@ -71,6 +71,9 @@
             <div class="review-text">
             <%= review.review_text %>
             </div>
+            <% if current_user == review.user %>
+            <%= link_to (image_tag 'delete.png', class: "delete_img"), review_path(review.id), method: :delete %>
+            <% end %>
           </div>
         </div>
       </div>
