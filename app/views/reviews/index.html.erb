@@ -75,6 +75,13 @@
             </div>
           </div>
           <div class="review-content">
+            <div class="review-index_title">
+            <%if review.review_title.blank? %>
+            <%= "タイトルなし" %>
+            <% else %>
+            <%= review.review_title %>
+            <% end %>
+            </div>
             <div class="review-text">
               <%= review.review_text %>
             </div>

@@ -102,7 +102,7 @@
 }
 .review-right{
   width: 480px;
-  height: 100px;
+  height: 80px;
   display: flex;
   align-items: center;
 }
@@ -146,8 +146,11 @@
 }
 .review-text{
   padding-right: 10px;
-  font-size: 20px;
+  font-size: 15px;
   word-wrap: break-word;
+}
+.review-index_title{
+  font-size: 20px;
 }
 .rate_item{
 }
