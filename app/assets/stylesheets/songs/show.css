@@ -8,7 +8,7 @@
 
 }
 .song_show_content{
-  height: 600px;
+  height: 650px;
   width: 1000px;
   background-color: whitesmoke;
   margin-bottom: 60px;
@@ -25,7 +25,7 @@
 .song-img-content{
   margin-left: 80px;
   width: 470px;
-  height: 300px;
+  height: 250px;
   margin-top: 40px;
 }
 .img-size_song-show{
@@ -67,4 +67,25 @@
 .play_video_content{
   margin: auto 0;
   margin-left: 10px;
+}
+.song-random-content-top{
+  display: flex;
+}
+.song-random-content{
+  height: 150px;
+  width: 269px;
+  margin-left: 50px;
+}
+.song-random-content_title{
+  font-size: 20px;
+  margin-left: 40px;
+  margin-top: 60px;
+  margin-bottom: 10px;
+}
+
+.img-size_random-show{
+  width: 269px;
+  height: 150px;
+  margin: auto 0;
+  object-fit: cover
 }

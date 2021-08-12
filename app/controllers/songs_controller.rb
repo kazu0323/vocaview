@@ -6,6 +6,7 @@ class SongsController < ApplicationController
   end
   def show
     @reviews = @song.reviews.order("id DESC").page(params[:page]).per(5)
+    @songs = Song.order("RAND()").limit(3)
   end
 
   private

@@ -24,6 +24,17 @@
           </div>
         </div>
       </div>
+      <div class="song-random-content_title">
+      <%= "おすすめ動画" %>
+      </div>
+      <div class="song-random-content-top">
+        <% @songs.each do |f|%>
+        <div class="song-random-content">
+          <%= link_to (image_tag f.song_image , class:"img-size_random-show" ), song_path(f.id)  %>
+          <%= f.song_name %>
+        </div>
+        <% end %>
+      </div>
     </div>
     <div class="mypage-under">
       <h1 class="mypage-under_title">
