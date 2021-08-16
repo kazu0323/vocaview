@@ -1,99 +1,97 @@
 
 <%= render "shared/header" %>
 
-<div class="content-container">
-  <div class="photo_top">
-      <%= link_to (image_tag 'header.png', class:"header-photo"), root_path %>
-  </div>
-  <div class="row-p-top-content">
-    <div class="p-top-content__inner">
-      <h2 class="c-heading-1">
-        Vocaviewで今注目の動画
-      </h2>
-      <div class="row-p-top-content__trends">
-      <% if @songs.blank? %>
-  
-      <% else %>
-        <% @songs.each do |song| %>
-        <div class="c-content-item">
-          <%= link_to (image_tag song.song_image , class:"img-size_review-index-top"), song_path(song.id) %>
-          <div class="top_review_item">
-            <%= link_to "レビュー", new_song_review_path(song.id) ,class:"review-visit" %>
-          </div>
-        </div>
-        <% end %>
-      <% end %>
-      </div>
-      <div class="c-more-read">
-        <%=link_to "もっと見る", songs_path, class:"c-more-read-item" %>
-      </div>
-   </div>
-  </div>
-  <div class="row-content_review-index">
-    <h2 class="c-heading-2">
-      新着レビュー
+<div class="photo_top">
+    <%= link_to (image_tag 'header.png', class:"header-photo"), root_path %>
+</div>
+<div class="row-p-top-content">
+  <div class="p-top-content__inner">
+    <h2 class="c-heading-1">
+      Vocaviewで今注目の動画
     </h2>
-    <div class="p-top-content__review">
-    <% if @reviews.blank? %>
-    
+    <div class="row-p-top-content__trends">
+    <% if @songs.blank? %>
+
     <% else %>
-      <% @reviews.each do |review| %>
-        <div class="r-content-item">
-          <div class="r-content-item-top">
-            <div class="content-song">
-              <div class="review-song">
-                <%= link_to (image_tag review.song.song_image , class:"img-size_review-index"), song_path(review.song.id)  %>
-              </div>
-            </div>
-            <div class="review-item">
-              <%= link_to "レビュー", new_song_review_path(review.song.id) ,class:"review-visit" %>
-            </div>
-          </div>
-          <div class="r-content-item-under">
-            <div class="review-right">
-              <div class="rigth-top">
-                <div class="review-usericon">
-                  <% if review.user.image_name.attached? %>
-                    <%= image_tag review.user.image_name %>
-                  <% end %>
-                </div>
-                <div class="review-username">
-                <%= link_to review.user.nickname, user_path(review.user.id) %>
-                </div>
-                <div class="review-star">
-                  <div id="star-rate-<%= review.id %>"></div>
-                </div>
-                <script>
-                  $('#star-rate-<%= review.id %>').raty({
-                    size: 5,
-                    starOff:  '<%= asset_path('star-off.png') %>',
-                    starOn : '<%= asset_path('star-on.png') %>',
-                    half: true,
-                    readOnly: true,
-                    score: <%= review.rate %>,
-                  });
-                </script> 
-              </div>
-            </div>
-            <div class="review-content">
-              <div class="review-index_title">
-              <%if review.review_title.blank? %>
-              <%= "タイトルなし" %>
-              <% else %>
-              <%= review.review_title %>
-              <% end %>
-              </div>
-              <div class="review-text">
-                <%= review.review_text %>
-              </div>
-              <% if current_user == review.user %>
-              <%= link_to (image_tag 'delete.png', class: "delete_img"), review_path(review.id), method: :delete %>
-              <% end %>
-            </div>
-          </div>
+      <% @songs.each do |song| %>
+      <div class="c-content-item">
+        <%= link_to (image_tag song.song_image , class:"img-size_review-index-top"), song_path(song.id) %>
+        <div class="top_review_item">
+          <%= link_to "レビュー", new_song_review_path(song.id) ,class:"review-visit" %>
         </div>
+      </div>
       <% end %>
     <% end %>
     </div>
+    <div class="c-more-read">
+      <%=link_to "もっと見る", songs_path, class:"c-more-read-item" %>
+    </div>
+ </div>
+</div>
+<div class="row-content_review-index">
+  <h2 class="c-heading-2">
+    新着レビュー
+  </h2>
+  <div class="p-top-content__review">
+  <% if @reviews.blank? %>
+  
+  <% else %>
+    <% @reviews.each do |review| %>
+      <div class="r-content-item">
+        <div class="r-content-item-top">
+          <div class="content-song">
+            <div class="review-song">
+              <%= link_to (image_tag review.song.song_image , class:"img-size_review-index"), song_path(review.song.id)  %>
+            </div>
+          </div>
+          <div class="review-item">
+            <%= link_to "レビュー", new_song_review_path(review.song.id) ,class:"review-visit" %>
+          </div>
+        </div>
+        <div class="r-content-item-under">
+          <div class="review-right">
+            <div class="rigth-top">
+              <div class="review-usericon">
+                <% if review.user.image_name.attached? %>
+                  <%= image_tag review.user.image_name %>
+                <% end %>
+              </div>
+              <div class="review-username">
+              <%= link_to review.user.nickname, user_path(review.user.id) %>
+              </div>
+              <div class="review-star">
+                <div id="star-rate-<%= review.id %>"></div>
+              </div>
+              <script>
+                $('#star-rate-<%= review.id %>').raty({
+                  size: 5,
+                  starOff:  '<%= asset_path('star-off.png') %>',
+                  starOn : '<%= asset_path('star-on.png') %>',
+                  half: true,
+                  readOnly: true,
+                  score: <%= review.rate %>,
+                });
+              </script> 
+            </div>
+          </div>
+          <div class="review-content">
+            <div class="review-index_title">
+            <%if review.review_title.blank? %>
+            <%= "タイトルなし" %>
+            <% else %>
+            <%= review.review_title %>
+            <% end %>
+            </div>
+            <div class="review-text">
+              <%= review.review_text %>
+            </div>
+            <% if current_user == review.user %>
+            <%= link_to (image_tag 'delete.png', class: "delete_img"), review_path(review.id), method: :delete %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
   </div>
 </div>

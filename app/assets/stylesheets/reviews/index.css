@@ -161,15 +161,3 @@
   background-color: rgb(245, 245, 245);
 }
 
-@media screen and (min-width: 641px) {
-	img {
-		width: 640px;
-		height: 320px;
-	}
-}
-@media screen and (max-width: 640px) {
-	img {
-		width: 320px;
-		height: 160px;
-	}
-}
